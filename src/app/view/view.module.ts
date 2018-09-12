@@ -14,10 +14,10 @@ import { TestService } from '../test.service';
 })
 export class ViewModule {
   constructor(private svc: TestService) {
-    this.svc.printToConsole(this.newMethod());
+    this.svc.printToConsole(this._getStringTxt());
   }
 
-  private newMethod(): any {
+  private _getStringTxt(): any {
     return 'Get service from inner module | component!';
   }
 }

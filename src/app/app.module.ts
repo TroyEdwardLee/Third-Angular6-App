@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ViewModule } from './view/view.module';
@@ -11,17 +12,10 @@ import { TestService } from './test.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ViewModule
   ],
   providers: [TestService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(private svc: TestService) {
-    this.svc.printToConsole(this.newMethod());
-  }
-
-  private newMethod(): any {
-    return 'I got the service!';
-  }
-}
+export class AppModule { }
