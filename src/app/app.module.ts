@@ -16,4 +16,12 @@ import { TestService } from './test.service';
   providers: [TestService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private svc: TestService) {
+    this.svc.printToConsole(this.newMethod());
+  }
+
+  private newMethod(): any {
+    return 'I got the service!';
+  }
+}
