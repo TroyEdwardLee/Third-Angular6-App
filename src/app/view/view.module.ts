@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ViewComponentComponent } from './view-component/view-component.component';
-import { TestService } from '../test.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [ViewComponentComponent],
   exports: [
@@ -13,11 +14,5 @@ import { TestService } from '../test.service';
   ]
 })
 export class ViewModule {
-  constructor(private svc: TestService) {
-    this.svc.printToConsole(this._getStringTxt());
-  }
-
-  private _getStringTxt(): any {
-    return 'Get service from inner module | component!';
-  }
+  constructor() { }
 }
